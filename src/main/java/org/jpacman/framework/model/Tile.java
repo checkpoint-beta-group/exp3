@@ -17,15 +17,15 @@ public class Tile {
 
     /**
      * Create a new tile for the given location.
-     * 
-     * @param x
+     *
+     * @param cx
      *            horizontal coordinate
-     * @param y
+     * @param cy
      *            vertical coordinate
      */
-    public Tile(int x, int y) {
-        this.x = x;
-        this.y = y;
+    public Tile(final int cx, final int cy) {
+        this.x = cx;
+        this.y = cy;
         sprites = new ArrayDeque<Sprite>();
     }
 

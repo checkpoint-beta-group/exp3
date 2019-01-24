@@ -5,7 +5,7 @@ package org.jpacman.framework.model;
  * 
  * @author Arie van Deursen, TU Delft, Jan 22, 2012
  */
-public class Board implements IBoardInspector {
+public final class Board implements IBoardInspector {
 
     private final int height;
     private final int width;

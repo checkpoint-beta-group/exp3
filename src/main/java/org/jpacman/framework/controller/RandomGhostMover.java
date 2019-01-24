@@ -4,7 +4,6 @@ import org.jpacman.framework.model.Ghost;
 import org.jpacman.framework.model.IGameInteractor;
 import org.jpacman.framework.model.Direction;
 
-
 /**
  * Example, simple ghost mover that just moves ghosts randomly.
  *
@@ -15,7 +14,8 @@ public class RandomGhostMover extends AbstractGhostMover {
     /**
      * Start a new mover with the given engine.
      *
-     * @param theEngine Engine used.
+     * @param theEngine
+     *            Engine used.
      */
     public RandomGhostMover(final IGameInteractor theEngine) {
         super(theEngine);

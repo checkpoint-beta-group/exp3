@@ -8,15 +8,15 @@ import org.junit.Test;
 
 public class PointManagerTest {
 
-	@Test
-	public void testAddAndConsume() {
-		PointManager pm = new PointManager();
+    @Test
+    public void testAddAndConsume() {
+        PointManager pm = new PointManager();
 
-		pm.addPointsToBoard(1);
-		assertFalse(pm.allEaten());
+        pm.addPointsToBoard(1);
+        assertFalse(pm.allEaten());
 
-		pm.consumePointsOnBoard(1);
-		assertTrue(pm.allEaten());
-	}
+        pm.consumePointsOnBoard(1);
+        assertTrue(pm.allEaten());
+    }
 
 }

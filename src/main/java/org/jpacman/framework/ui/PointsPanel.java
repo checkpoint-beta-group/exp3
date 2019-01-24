@@ -17,25 +17,26 @@ import org.jpacman.framework.model.IPointInspector;
  */
 public class PointsPanel extends JPanel implements Observer {
 
-	private static final long serialVersionUID = -6773251381947430351L;
+    private static final long serialVersionUID = -6773251381947430351L;
 
-	private static final int PANEL_HEIGHT = 45;
-	private static final int PANEL_WIDTH = 100;
-	
-	private IPointInspector pointInspector;
-	
-	private JTextField eatenField;
-	
-	/**
-	 * Initialize the UI fields displaying the points.
-	 * 
-	 * @param points Inspector for points as maintained by model.
-	 */
-	public void initialize(IPointInspector points) {
-		assert points != null;
-		
-		pointInspector = points;
-		
+    private static final int PANEL_HEIGHT = 45;
+    private static final int PANEL_WIDTH = 100;
+
+    private IPointInspector pointInspector;
+
+    private JTextField eatenField;
+
+    /**
+     * Initialize the UI fields displaying the points.
+     * 
+     * @param points
+     *            Inspector for points as maintained by model.
+     */
+    public void initialize(IPointInspector points) {
+        assert points != null;
+
+        pointInspector = points;
+
         JLabel pointsLabel = new JLabel("Points: ");
         final int eatenWidth = 7;
         eatenField = new JTextField("0", eatenWidth);
@@ -49,19 +50,16 @@ public class PointsPanel extends JPanel implements Observer {
         setName("jpacman.points.panel");
         setSize(PANEL_WIDTH, PANEL_HEIGHT);
         displayPoints();
-	}
+    }
 
-	@Override
-	public void update(Observable o, Object arg) {
-		displayPoints();
-	}
-	
-	private void displayPoints() {
-		assert pointInspector != null;
-		String points = 
-				pointInspector.getFoodEaten() 
-				+ " / " 
-				+ pointInspector.totalFoodInGame();
-		eatenField.setText(points);
-	}
+    @Override
+    public void update(Observable o, Object arg) {
+        displayPoints();
+    }
+
+    private void displayPoints() {
+        assert pointInspector != null;
+        String points = pointInspector.getFoodEaten() + " / " + pointInspector.totalFoodInGame();
+        eatenField.setText(points);
+    }
 }

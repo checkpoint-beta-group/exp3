@@ -9,12 +9,12 @@ import org.jpacman.framework.model.IBoardInspector.SpriteType;
  */
 public class Wall extends Sprite {
 
-	/**
-	 * @return That this sprite is a wall.
-	 */
-	@Override
-	public SpriteType getSpriteType() {
-		return SpriteType.WALL;
-	}
+    /**
+     * @return That this sprite is a wall.
+     */
+    @Override
+    public SpriteType getSpriteType() {
+        return SpriteType.WALL;
+    }
 
 }

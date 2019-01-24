@@ -7,19 +7,19 @@ package org.jpacman.framework.ui;
  */
 
 public interface IButtonEvents {
-	
-	/**
-	 * Start the game.
-	 */
-	void start();
-	
-	/**
-	 * Pause the game.
-	 */
-	void stop();
-	
-	/**
-	 * Exit the game.
-	 */
-	void exit();
+
+    /**
+     * Start the game.
+     */
+    void start();
+
+    /**
+     * Pause the game.
+     */
+    void stop();
+
+    /**
+     * Exit the game.
+     */
+    void exit();
 }

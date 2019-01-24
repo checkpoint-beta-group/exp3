@@ -9,66 +9,67 @@ import java.awt.event.KeyListener;
  * @author Arie van Deursen, TU Delft, Jan 29, 2012
  */
 public class PacmanKeyListener implements KeyListener {
-	
-	/**
-	 * The interface to the underlying model.
-	 */
-	private final IKeyboardEvents modelEvents;
 
-	/**
-	 * Create a new keyboard listener, given a handler
-	 * for model events keyboard events should be mapped to.
-	 * 
-	 * @param me Events the model can handle.
-	 */
-	PacmanKeyListener(IKeyboardEvents me) {
-		modelEvents = me;
-	}
+    /**
+     * The interface to the underlying model.
+     */
+    private final IKeyboardEvents modelEvents;
 
-	@Override
-	public void keyTyped(KeyEvent e) {
-		// nothing.		
-	}
+    /**
+     * Create a new keyboard listener, given a handler for model events keyboard
+     * events should be mapped to.
+     * 
+     * @param me
+     *            Events the model can handle.
+     */
+    PacmanKeyListener(IKeyboardEvents me) {
+        modelEvents = me;
+    }
 
-	@Override
-	public void keyPressed(KeyEvent event) {
-		int code;
+    @Override
+    public void keyTyped(KeyEvent e) {
+        // nothing.
+    }
 
-		code = event.getKeyCode();
+    @Override
+    public void keyPressed(KeyEvent event) {
+        int code;
 
-		switch (code) {
-		case KeyEvent.VK_UP: // or
-		case KeyEvent.VK_K:
-			modelEvents.up();
-			break;
-		case KeyEvent.VK_DOWN: // or
-		case KeyEvent.VK_J:
-			modelEvents.down();
-			break;
-		case KeyEvent.VK_LEFT: // or
-		case KeyEvent.VK_H:
-			modelEvents.left();
-			break;
-		case KeyEvent.VK_RIGHT: // or
-		case KeyEvent.VK_L:
-			modelEvents.right();
-			break;
-		case KeyEvent.VK_Q:
-			modelEvents.stop();  
-			break;
-		case KeyEvent.VK_X:
-			modelEvents.exit(); 
-			break;
-		case KeyEvent.VK_S:
-			modelEvents.start(); 
-			break;
-		default:
-			// all other events ignored.
-		}
-	}
+        code = event.getKeyCode();
 
-	@Override
-	public void keyReleased(KeyEvent e) {
-		// nothing.
-	}
+        switch (code) {
+        case KeyEvent.VK_UP: // or
+        case KeyEvent.VK_K:
+            modelEvents.up();
+            break;
+        case KeyEvent.VK_DOWN: // or
+        case KeyEvent.VK_J:
+            modelEvents.down();
+            break;
+        case KeyEvent.VK_LEFT: // or
+        case KeyEvent.VK_H:
+            modelEvents.left();
+            break;
+        case KeyEvent.VK_RIGHT: // or
+        case KeyEvent.VK_L:
+            modelEvents.right();
+            break;
+        case KeyEvent.VK_Q:
+            modelEvents.stop();
+            break;
+        case KeyEvent.VK_X:
+            modelEvents.exit();
+            break;
+        case KeyEvent.VK_S:
+            modelEvents.start();
+            break;
+        default:
+            // all other events ignored.
+        }
+    }
+
+    @Override
+    public void keyReleased(KeyEvent e) {
+        // nothing.
+    }
 }

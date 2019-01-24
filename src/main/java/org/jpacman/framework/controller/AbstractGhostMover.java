@@ -19,8 +19,7 @@ import org.jpacman.framework.model.IGameInteractor;
  *
  * @author Arie van Deursen, 3 September, 2003
  */
-public abstract class AbstractGhostMover implements ActionListener,
-IController {
+public abstract class AbstractGhostMover implements ActionListener, IController {
 
     /**
      * Randomizer used to pick, e.g., a ghost at random.
@@ -42,17 +41,17 @@ IController {
      */
     private final IGameInteractor theGame;
 
-    
     /**
      * The default delay between ghost moves.
      */
     public static final int DELAY = 40;
 
     /**
-     * Create a new ghostcontroller using the default
-     * delay and the given game engine.
+     * Create a new ghostcontroller using the default delay and the given game
+     * engine.
      *
-     * @param game The underlying model of the game.
+     * @param game
+     *            The underlying model of the game.
      */
     public AbstractGhostMover(IGameInteractor game) {
         theGame = game;
@@ -62,6 +61,7 @@ IController {
 
     /**
      * Variable that should always be set.
+     * 
      * @return true iff all vars non-null.
      */
     protected final boolean controllerInvariant() {
@@ -70,10 +70,12 @@ IController {
 
     /**
      * ActionListener event caught when timer ticks.
-     * @param e Event caught.
+     * 
+     * @param e
+     *            Event caught.
      */
     @Override
-	public void actionPerformed(ActionEvent e) {
+    public void actionPerformed(ActionEvent e) {
         assert controllerInvariant();
         synchronized (theGame) {
             doTick();
@@ -85,7 +87,7 @@ IController {
      * @see IController.controller.IController#start()
      */
     @Override
-	public void start() {
+    public void start() {
         assert controllerInvariant();
         // the game may have been restarted -- refresh the ghost list
         // contained.
@@ -95,21 +97,21 @@ IController {
             assert ghosts != null;
         }
         assert controllerInvariant();
-     }
+    }
 
     /**
      * @see IController.controller.IController#stop()
      */
     @Override
-	public void stop() {
+    public void stop() {
         assert controllerInvariant();
         timer.stop();
         assert controllerInvariant();
     }
 
     /**
-     * Return a randomly chosen ghost, or null if there
-     * are no ghosts in this game.
+     * Return a randomly chosen ghost, or null if there are no ghosts in this game.
+     * 
      * @return Random ghost or null;
      */
     protected Ghost getRandomGhost() {
@@ -117,22 +119,23 @@ IController {
         if (!ghosts.isEmpty()) {
             final int ghostIndex = randomizer.nextInt(ghosts.size());
             theGhost = ghosts.get(ghostIndex);
-        } 
+        }
         return theGhost;
     }
 
     /**
      * Obtain the randomizer used for ghost moves.
+     * 
      * @return the randomizer.
      */
     protected static Random getRandomizer() {
         return randomizer;
     }
-    
+
     /**
      * @return The object to manipulate the game model.
      */
     protected IGameInteractor gameInteraction() {
-    	return theGame;
+        return theGame;
     }
 }

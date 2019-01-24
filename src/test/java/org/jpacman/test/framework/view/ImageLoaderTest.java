@@ -14,6 +14,7 @@ import org.junit.Test;
 
 /**
  * Fairly basic test cases for the image factory.
+ * 
  * @author Arie van Deursen, TU Delft, created 2007.
  */
 public class ImageLoaderTest {
@@ -25,9 +26,12 @@ public class ImageLoaderTest {
 
     /**
      * Actually create the image factory.
-     * @throws FactoryException if images can't be found.
+     * 
+     * @throws FactoryException
+     *             if images can't be found.
      */
-    @Before public void setUp() throws FactoryException {
+    @Before
+    public void setUp() throws FactoryException {
         imf = new ImageLoader();
         imf.loadImages();
     }
@@ -35,7 +39,8 @@ public class ImageLoaderTest {
     /**
      * Are images for player properly loaded?
      */
-    @Test public void testPlayer() {
+    @Test
+    public void testPlayer() {
         Image up = imf.player(Direction.UP, 1);
         Image down = imf.player(Direction.DOWN, 1);
         assertNotSame(up, down);
@@ -44,10 +49,11 @@ public class ImageLoaderTest {
     /**
      * Are monster images properly loaded?
      */
-    @Test public void testMonster() {
+    @Test
+    public void testMonster() {
         Image m1 = imf.monster(0);
         Image m2 = imf.monster(0);
         assertEquals(m1, m2);
     }
-    
+
 }

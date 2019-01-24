@@ -12,15 +12,15 @@ import org.junit.Test;
  */
 public class ButtonPanelTest {
 
-	@Test
-	public void buttonPanelSmokeTest() {
-		JFrame jf = new JFrame();
-		ButtonPanel bp = new ButtonPanel(jf);
-		jf.add(bp);
-		jf.setVisible(true);
-		// next create suitable mocks for the listeners.
-		// and then all we need is a gui testing
-		// framework allowing us to click...
-	}
+    @Test
+    public void buttonPanelSmokeTest() {
+        JFrame jf = new JFrame();
+        ButtonPanel bp = new ButtonPanel(jf);
+        jf.add(bp);
+        jf.setVisible(true);
+        // next create suitable mocks for the listeners.
+        // and then all we need is a gui testing
+        // framework allowing us to click...
+    }
 
 }

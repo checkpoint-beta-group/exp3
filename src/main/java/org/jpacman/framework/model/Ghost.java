@@ -9,12 +9,12 @@ import org.jpacman.framework.model.IBoardInspector.SpriteType;
  */
 public class Ghost extends Sprite {
 
-	/**
-	 * @return That this sprite is a ghost.
-	 */
-	@Override
-	public SpriteType getSpriteType() {
-		return SpriteType.GHOST;
-	}
+    /**
+     * @return That this sprite is a ghost.
+     */
+    @Override
+    public SpriteType getSpriteType() {
+        return SpriteType.GHOST;
+    }
 
 }

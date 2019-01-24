@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 
@@ -15,8 +16,8 @@
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<targetJdk>1.6</targetJdk>
 	</properties>
-	
-		<developers>
+
+	<developers>
 		<developer>
 			<id>arie</id>
 			<name>Arie van Deursen</name>
@@ -59,7 +60,7 @@
 			<url>LICENSE.txt</url>
 		</license>
 	</licenses>
-	
+
 
 	<dependencies>
 		<dependency>
@@ -78,7 +79,7 @@
 
 	<build>
 		<plugins>
-		
+
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-compiler-plugin</artifactId>
@@ -88,8 +89,8 @@
 					<target>1.6</target>
 				</configuration>
 			</plugin>
-		
-		
+
+
 			<plugin>
 				<artifactId>maven-assembly-plugin</artifactId>
 				<version>2.3</version>
@@ -107,7 +108,7 @@
 					</execution>
 				</executions>
 			</plugin>
-		
+
 
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
@@ -122,8 +123,8 @@
 					</archive>
 				</configuration>
 			</plugin>
-		
-		
+
+
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-site-plugin</artifactId>
